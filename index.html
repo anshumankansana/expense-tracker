@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Simple & Beautiful</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">💰 Expense Tracker</h1>
+            <p class="tagline">Track your spending with ease</p>
+        </header>
+
+        <div class="alert" id="budgetAlert">
+            ⚠️ You've exceeded your monthly budget!
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-icon">💵</div>
+                <div class="stat-label">Total Spent</div>
+                <div class="stat-value" id="totalSpent">₹0.00</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">📊</div>
+                <div class="stat-label">Transactions</div>
+                <div class="stat-value" id="totalCount">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-label">Monthly Budget</div>
+                <input type="number" id="budget" value="5000" style="text-align: center; font-size: 1.8rem; font-weight: 700; color: #667eea; border: none; padding: 5px; width: 100%; margin-top: 5px;">
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">📈</div>
+                <div class="stat-label">Average</div>
+                <div class="stat-value" id="avgSpent">₹0.00</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="card">
+                <h2 class="card-title">Add Expense</h2>
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="category">
+                        <option value="Food">🍔 Food</option>
+                        <option value="Transport">🚗 Transport</option>
+                        <option value="Entertainment">🎬 Entertainment</option>
+                        <option value="Bills">💡 Bills</option>
+                        <option value="Shopping">🛍️ Shopping</option>
+                        <option value="Other">📦 Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" id="description" placeholder="Optional">
+                </div>
+                <button class="btn btn-primary" onclick="addExpense()">Add Expense</button>
+
+                <div class="chart">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: #333;">Category Breakdown</h3>
+                    <div id="chartContainer"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="top-actions">
+                    <h2 class="card-title" style="margin: 0;">Expenses</h2>
+                    <button class="btn btn-success btn-small" onclick="exportCSV()">📥 Export</button>
+                </div>
+
+                <div class="filters">
+                    <select id="filterCat" onchange="updateUI()">
+                        <option value="All">All Categories</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="date" id="filterFrom" onchange="updateUI()">
+                    <input type="date" id="filterTo" onchange="updateUI()">
+                    <button class="btn btn-secondary btn-small" onclick="clearFilters()">Clear</button>
+                </div>
+
+                <div class="expense-list" id="expenseList">
+                    <div class="no-data">
+                        <div class="no-data-icon">📝</div>
+                        <p>No expenses yet. Add one to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
