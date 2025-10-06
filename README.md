@@ -4,8 +4,9 @@ Date: 06/10/2025
 Purpose: Internship Assignment
 Development Time: 2 hours 30 minutes
 Status: ✅ Complete and Production-Ready
+website- 
 1. How to Run the Application
-1. Clone the GitHub repository: [Your GitHub Link]
+1. Clone the GitHub repository: 
 2. Open the index.html file in your browser.
 3. Use the form to add expenses, filter by category/date, and view statistics.
 4. Optional: Export expenses as CSV using the export button.
