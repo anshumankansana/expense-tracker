@@ -4,7 +4,12 @@ Date: 06/10/2025
 Purpose: Internship Assignment
 Development Time: 2 hours 30 minutes
 Status: ✅ Complete and Production-Ready
-website- 
+website- # Expense Tracker 💰
+
+Track your spending easily with this simple expense tracker app.
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue?logo=github)](https://anshumankansana.github.io/expense-tracker/)
+
 1. How to Run the Application
 1. Clone the GitHub repository: 
 2. Open the index.html file in your browser.
